@@ -1,0 +1,5 @@
+name: "thomas-sounack/Bio-ModernBERT-large"
+
+use_presence_loss: true
+presence_loss_weight: 1.0
+presence_label_threshold: 0.0

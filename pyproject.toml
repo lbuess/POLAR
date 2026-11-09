@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polar"
+version = "0.1.0"
+description = "POLAR: Polarity-Aware and Anatomy-Conditioned Radiology Report Evaluation"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [
+    { name = "Lukas Buess" },
+    { name = "Tri-Thien Nguyen" },
+    { name = "Xiaoliang Wang" },
+    { name = "Paula Andrea Perez-Toro" },
+    { name = "Tomas Arias-Vergara" },
+    { name = "Bernhard Kainz" },
+    { name = "Andreas Maier" },
+]
+dependencies = [
+    "torch",
+    "transformers>=4.57",
+    "numpy",
+]
+
+[project.optional-dependencies]
+# Training also needs FlashAttention 2, installed separately (see README).
+train = [
+    "pandas",
+    "tqdm",
+    "hydra-core",
+    "omegaconf",
+    "wandb",
+]
+
+[project.urls]
+Repository = "https://github.com/lbuess/POLAR"
+Paper = "https://aclanthology.org/2026.emnlp-main.2675/"
+Model = "https://huggingface.co/lbuess/POLAR"
+Dataset = "https://huggingface.co/datasets/lbuess/POLAR-Synth"
+
+[tool.setuptools.packages.find]
+include = ["polar*"]
+
+[tool.setuptools.package-data]
+"polar.train" = ["conf/*.yaml", "conf/*/*.yaml"]

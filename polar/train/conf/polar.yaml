@@ -1,0 +1,36 @@
+defaults:
+  - _self_
+  - model: modernbert_bio2_large
+  - data: default
+
+run:
+  train: true
+  eval: false
+
+training:
+  # training details
+  output_dir: "outputs/${hydra:runtime.choices.model}_${hydra:runtime.choices.data}"
+  debug: false
+  debug_num_samples: 10000
+  device: "auto" # auto, cuda
+
+  # hyperparameters
+  epochs: 10
+  batch_size: 64
+  gradient_accumulation_steps: 2
+  learning_rate: 2e-5
+  scheduler: linear # options: linear, cosine
+  warmup_steps: 0 # if set, overrides warmup_ratio
+  warmup_ratio: null
+
+evaluation:
+  checkpoint_dir: null
+  limit_per_dataset: null
+
+# Optional Weights & Biases logging. Disabled by default; set mode to
+# "online" (and entity to your W&B user/team) to enable it.
+wandb:
+  project: "polar"
+  entity: null
+  name: ${hydra:runtime.choices.model}_${hydra:runtime.choices.data}
+  mode: "disabled" # options: disabled, online, offline

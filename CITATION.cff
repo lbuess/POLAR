@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "POLAR"
+authors:
+  - family-names: "Buess"
+    given-names: "Lukas"
+  - family-names: "Nguyen"
+    given-names: "Tri-Thien"
+  - family-names: "Wang"
+    given-names: "Xiaoliang"
+  - family-names: "Perez-Toro"
+    given-names: "Paula Andrea"
+  - family-names: "Arias-Vergara"
+    given-names: "Tomas"
+  - family-names: "Kainz"
+    given-names: "Bernhard"
+  - family-names: "Maier"
+    given-names: "Andreas"
+year: 2026
+url: "https://github.com/lbuess/POLAR"
+preferred-citation:
+  type: conference-paper
+  title: "POLAR: Polarity-Aware and Anatomy-Conditioned Radiology Report Evaluation"
+  authors:
+    - family-names: "Buess"
+      given-names: "Lukas"
+    - family-names: "Nguyen"
+      given-names: "Tri-Thien"
+    - family-names: "Wang"
+      given-names: "Xiaoliang"
+    - family-names: "Perez-Toro"
+      given-names: "Paula Andrea"
+    - family-names: "Arias-Vergara"
+      given-names: "Tomas"
+    - family-names: "Kainz"
+      given-names: "Bernhard"
+    - family-names: "Maier"
+      given-names: "Andreas"
+  collection-title: "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing"
+  start: 60854
+  end: 60872
+  year: 2026

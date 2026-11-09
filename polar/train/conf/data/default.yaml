@@ -1,0 +1,36 @@
+# Hydra resolves repo-relative paths via to_absolute_path().
+train_files:
+  - "dataset/train/cxr_train.csv"
+  - "dataset/train/ct-rate_train.csv"
+  - "dataset/train/mr-rate_train.csv"
+  - "dataset/train/merlin_train.csv"
+
+val_files:
+  - "dataset/val/cxr_val.csv"
+  - "dataset/val/ct-rate_val.csv"
+  - "dataset/val/mr-rate_val.csv"
+  - "dataset/val/merlin_val.csv"
+
+# Columns in csv
+ref_col: "reference"
+cand_col: "candidate"
+region_col: "conditioning" # used as conditioning text
+
+# Label heads to regress (must exist as numeric columns in the CSV)
+# You can add/remove heads; train.py will set config.num_error_categories accordingly.
+error_cols:
+  # Error types (8 heads)
+  - "sig_a"
+  - "sig_b"
+  - "sig_c"
+  - "sig_d"
+  - "sig_e"
+  - "sig_f"
+  - "sig_g"
+  - "sig_h"
+  # Matched findings split into normal/abnormal (2 heads)
+  - "matched_normal"
+  - "matched_abnormal"
+
+# Max length of the input text
+max_length: 2048
